@@ -117,6 +117,9 @@ while(cap.isOpened()):
     ret, frame = cap.read()
     if frame is None:
         break
+        
+    frame.set(3, 640)
+    frame.set(4, 480)
 
     posed_frame = process_frame(frame, body=not args.no_body,
                                        hands=not args.no_hands)
